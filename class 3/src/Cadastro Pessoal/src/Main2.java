@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Pessoa persona = new Pessoa();
+        Pessoa2 persona = new Pessoa2();
 
         System.out.print("Digite o seu nome: ");
         persona.setNome (sc.nextLine());
@@ -16,6 +16,9 @@ public class Main {
         System.out.print("Digite a sua altura: ");
         persona.setAltura (sc.nextDouble());
         sc.nextLine();
+
+        System.out.print("Digite sua data de nascimento: ");
+        persona.setNasc (sc.nextLine());
 
         System.out.print("Digite seu RG: ");
         persona.setRg (sc.nextLine());
@@ -33,6 +36,7 @@ public class Main {
         System.out.println();
         System.out.println("Nome:" + persona.getNome());
         System.out.println("RG:" + persona.getRg());
+        System.out.println("Data de Nascimento:" + persona.getNasc());
         System.out.println("CPF:" + persona.getCpf());
         System.out.println("Sexo:" + persona.getSexo());
         System.out.println("E-mail:" + persona.getEmail());
