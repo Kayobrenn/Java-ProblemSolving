@@ -3,4 +3,4 @@ preço e quantidade em estoque. Implemente métodos para adicionar estoque e ven
 unidades do produto. Na classe principal, crie um objeto Produto, realize operações de:
 • Adicionar estoque
 • Vender produtos
-• Exibir o estoque.
+• Exibir o estoques
