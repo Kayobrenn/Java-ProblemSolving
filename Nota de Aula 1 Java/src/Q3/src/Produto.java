@@ -1,19 +1,27 @@
-public class Produto {
-    static String nome;
-    double preco;
-    double quantidade;
-    int opcao;
+class Produto {
+    private String nome;
+    private int quantidade;
+    private double preco;
+    private int quantidadevenda;
+    private double resultado;
 
-    public static String getNome() {
+
+    public void multiplicar() {resultado = quantidadevenda*preco;}
+
+    public String getNome() {
         return nome;
     }
 
-    public static void setNome(String nome) {
-        Produto.nome = nome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public double getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public double getPreco() {
@@ -24,7 +32,15 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setQuantidade(double quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantidadevenda(int quantidadevenda) {
+        this.quantidadevenda = quantidadevenda;
+    }
+
+    public int getQuantidadevenda() {
+        return quantidadevenda;
+    }
+
+    public double getResultado() {
+        return resultado;
     }
 }
