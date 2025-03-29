@@ -59,7 +59,6 @@ public class Main {
                         if (produto.getQuantidade() >= produto.getQuantidadevenda()) {
                             produto.calcularTotalVenda();
                             produto.reduzir_estoque();
-                            //produto.setQuantidade(produto.getQuantidade() - produto.getQuantidadevenda());
                             System.out.println("\nValor unitário: R$" + produto.getPreco());
                             System.out.println("\nO valor total da venda: R$" + produto.getResultado());
                         } else {
@@ -100,6 +99,7 @@ public class Main {
                                 } else {
                                     System.out.println("Valor pago é insuficiente! Falta R$" + (produto.getResultado() - produto.getValorpago()));
                                 }
+
                                 break;
                             case 2:
                                 System.out.println("\n______________________________________________________________");
