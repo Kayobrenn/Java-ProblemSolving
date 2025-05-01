@@ -1,7 +1,7 @@
-package controller;
+package Q7.controller;
 
-import model.Professor;
-import service.ProfessorService;
+import Q7.model.Professor;
+import Q7.service.ProfessorService;
 
 import java.util.List;
 

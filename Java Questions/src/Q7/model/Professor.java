@@ -1,6 +1,6 @@
-package model;
+package Q7.model;
 
-import enums.Classificacao;
+import Q7.enums.Classificacao;
 import model.interfaces.Folha;
 
 public final class Professor extends Pessoa implements Folha {

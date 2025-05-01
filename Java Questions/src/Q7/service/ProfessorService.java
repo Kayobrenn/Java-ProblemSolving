@@ -1,6 +1,6 @@
-package service;
+package Q7.service;
 
-import model.Professor;
+import Q7.model.Professor;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package model;
+package Q7.model;
 
 public abstract class Pessoa {
     private String nome;
