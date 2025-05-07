@@ -1,6 +1,0 @@
-Elabore um programa que simule um sistema bancário de um cliente. Inicialmente o saldo
-está zerado, mas o cliente pode escolher qualquer uma das seguintes opções do menu:
-• Consultar saldo
-• Depositar
-• Sacar
-• Transferir
