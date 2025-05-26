@@ -13,7 +13,7 @@ public class UsuarioController {
     public void cadastrarUsuario(String username, String senha) {
         Usuario usuario = new Usuario(username, senha);
         usuarioService.cadastrarUsuario(usuario);
-        System.out.println("Usuário cadastrado com sucesso!");
+        System.out.println("\n✅ Usuário cadastrado com sucesso!\n");
     }
 
     public void listarUsuarios() {

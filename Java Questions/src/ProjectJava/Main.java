@@ -198,9 +198,16 @@ public class Main {
     }
 
     private static void cadastrarUsuario() {
-        System.out.print("Digite o nome de usuário: ");
+        System.out.println("=========================================================");
+        System.out.println("                 👤 CADASTRO DE USUÁRIO                   ");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("    Preencha as informações para cadastrar um usuário.   ");
+        System.out.println("=========================================================");
+        System.out.println();
+
+        System.out.print("🔸 Digite o nome do usuário: ");
         String username = scanner.nextLine();
-        System.out.print("Digite a senha: ");
+        System.out.print("🔸 Digite a senha: ");
         String senha = scanner.nextLine();
 
         usuarioController.cadastrarUsuario(username, senha);
