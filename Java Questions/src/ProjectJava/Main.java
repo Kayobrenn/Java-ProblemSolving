@@ -17,6 +17,18 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("======================================================");
+        System.out.println("             🚀  BEM-VINDO AO SISTEMA                 ");
+        System.out.println("                     RH MANAGER                       ");
+        System.out.println("------------------------------------------------------");
+        System.out.println("      Sistema de Gestão de Funcionários e Setores     ");
+        System.out.println("------------------------------------------------------");
+        System.out.println(" Desenvolvido por: Kayo Brenno Gomes Cunha            ");
+        System.out.println(" Versão: 1.0                                           ");
+        System.out.println("======================================================");
+        System.out.println();
+
+
         System.out.println("===== LOGIN =====");
 
         boolean autenticado = false;
@@ -120,8 +132,21 @@ public class Main {
         }
 
         System.out.print("Digite o Estado Civil: ");
+        String estadoCivil = scanner.nextLine();
 
-        System.out.print("Digite o email: ");
+        System.out.print("Digite o Cargo: ");
+        String cargo = scanner.nextLine();
+
+        System.out.print("Digite o Data de Admissão: ");
+        String dataAdmissao = scanner.nextLine();
+
+        System.out.print("Digite o Salario:");
+        double salario = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Digite o Tipo de Pagamento: ");
+        String tipoPagamento = scanner.nextLine();
+
+        System.out.print("Digite o e-mail: ");
         String email = scanner.nextLine();
 
         System.out.print("Digite o telefone: ");
@@ -140,7 +165,8 @@ public class Main {
         String nomeSetor = scanner.nextLine();
         Setor setor = setorController.buscarSetorPorNome(nomeSetor);
 
-        funcionarioController.cadastrarFuncionario(nome, cpf, idade, email, telefone, sexo, setor);
+        funcionarioController.cadastrarFuncionario(nome, cpf, rg, idade, dataNascimento, email, telefone, sexo,
+                                                    setor, cargo, dataAdmissao, salario, tipoPagamento, estadoCivil);
     }
 
     private static void cadastrarUsuario() {
