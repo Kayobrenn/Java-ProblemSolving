@@ -5,6 +5,8 @@ import ProjectJava.service.SetorService;
 
 import java.util.List;
 
+import static ProjectJava.Main.scanner;
+
 public class SetorController {
     private SetorService setorService = new SetorService();
 
@@ -27,6 +29,27 @@ public class SetorController {
 
     public Setor buscarSetorPorNome(String nome) {
         return setorService.buscarPorNome(nome);
+    }
+
+    public void cadastrarOuExcluirSetor(String nome, String descricao) {
+        Setor existente = setorService.buscarPorNome(nome);
+
+        if (existente != null) {
+            System.out.println("\n⚠️ O setor \"" + nome + "\" já existe.");
+            System.out.print("Deseja excluir este setor? (Sim/Nâo): ");
+            String resposta = scanner.nextLine();
+
+            if (resposta.equalsIgnoreCase("Sim") || resposta.equalsIgnoreCase("SIM")) {
+                setorService.excluirSetor(existente);
+                System.out.println("✅ Setor excluído com sucesso!\n");
+            } else {
+                System.out.println("Operação cancelada. Nenhuma alteração feita.\n");
+            }
+        } else {
+            Setor setor = new Setor(nome, descricao);
+            setorService.cadastrarSetor(setor);
+            System.out.println("\n✅ Setor cadastrado com sucesso!\n");
+        }
     }
 }
 

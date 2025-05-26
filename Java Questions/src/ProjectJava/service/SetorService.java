@@ -23,5 +23,9 @@ public class SetorService {
         }
         return null;
     }
+
+    public boolean excluirSetor(Setor setor) {
+        return setores.remove(setor);
+    }
 }
 

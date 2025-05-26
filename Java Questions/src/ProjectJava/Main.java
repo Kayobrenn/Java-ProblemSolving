@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
     private static SetorController setorController = new SetorController();
     private static FuncionarioController funcionarioController = new FuncionarioController();
     private static UsuarioController usuarioController = new UsuarioController();
@@ -72,7 +72,7 @@ public class Main {
             System.out.println("=========================================================");
             System.out.println("                        📋 MENU                          ");
             System.out.println("---------------------------------------------------------");
-            System.out.println(" [1] ➕ Cadastrar Setor                                   ");
+            System.out.println(" [1] ➕ Cadastrar Setor | ❌ Excluir Setor                                   ");
             System.out.println(" [2] 📑 Listar Setores                                    ");
             System.out.println(" [3] ➕ Cadastrar Funcionário                             ");
             System.out.println(" [4] 📑 Listar Funcionários                               ");
@@ -118,18 +118,19 @@ public class Main {
     }
 
     private static void cadastrarSetor() {
-        System.out.println("=========================================================");
-        System.out.println("                🏢 CADASTRO DE SETOR                     ");
-        System.out.println("---------------------------------------------------------");
-        System.out.println("   Preencha as informações para cadastrar um novo setor. ");
-        System.out.println("=========================================================");
+        System.out.println("===========================================================");
+        System.out.println("                 🏢 CADASTRO DE SETOR                      ");
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Preencha as informações para cadastrar ou excluir um setor.");
+        System.out.println("===========================================================");
         System.out.println();
         System.out.print("🔸 Digite o nome do setor: ");
         String nome = scanner.nextLine();
+
         System.out.print("🔸 Digite a descrição do setor: ");
         String descricao = scanner.nextLine();
 
-        setorController.cadastrarSetor(nome, descricao);
+        setorController.cadastrarOuExcluirSetor(nome, descricao);
     }
 
     private static void cadastrarFuncionario() {
