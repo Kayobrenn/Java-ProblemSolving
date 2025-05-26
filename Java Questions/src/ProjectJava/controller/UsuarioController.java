@@ -17,7 +17,12 @@ public class UsuarioController {
 
     public void listarUsuarios() {
         for (Usuario u : usuarioService.listarUsuarios()) {
-            System.out.println("Usuário: " + u.getUsername());
+            System.out.println("=========================================================");
+            System.out.println("                 👥 DADOS DO USUÁRIO                     ");
+            System.out.println("=========================================================");
+            System.out.println("👤 Usuário: " + u.getUsername());
+            System.out.println("🔒 Senha  : " + u.getSenha());
+            System.out.println("=========================================================\n");
         }
     }
 }
