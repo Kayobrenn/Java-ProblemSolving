@@ -38,34 +38,26 @@ public class Funcionario implements Cadastravel {
         this.estadoCivil = estadoCivil;
     }
 
-
-    public String getNome() {
-        return nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
     @Override
     public void exibirDados() {
-        System.out.println("__________________________________");
-        System.out.println("Funcionário: " + nome);
-        System.out.println("----------------------------------");
-        System.out.println("CPF             : " + cpf);
-        System.out.println("RG              : " + rg);
-        System.out.println("Idade           : " + idade);
-        System.out.println("Email           : " + email);
-        System.out.println("Data Nascimento : " + dataNascimento);
-        System.out.println("Estado Civíl    : " + estadoCivil);
-        System.out.println("Telefone        : " + telefone);
-        System.out.println("Sexo            : " + sexo);
-        System.out.println("Setor           : " + setor.getNome());
-        System.out.println("Cargo           : " + cargo);
-        System.out.println("Data Admissão   : " + dataAdmissao);
-        System.out.println("Salário         : R$ " + salario);
-        System.out.println("Pagamento       : " + tipoPagamento);
-        System.out.println("__________________________________\n");
+        System.out.println("=========================================================");
+        System.out.println("                 👨‍💼 DADOS DO FUNCIONÁRIO                 ");
+        System.out.println("=========================================================");
+        System.out.println("Nome             : " + nome);
+        System.out.println("CPF              : " + cpf);
+        System.out.println("RG               : " + rg);
+        System.out.println("Idade            : " + idade);
+        System.out.println("Email            : " + email);
+        System.out.println("Data Nascimento  : " + dataNascimento);
+        System.out.println("Estado Civil     : " + estadoCivil);
+        System.out.println("Telefone         : " + telefone);
+        System.out.println("Sexo             : " + sexo);
+        System.out.println("Setor            : " + setor);
+        System.out.println("Cargo            : " + cargo);
+        System.out.println("Data Admissão    : " + dataAdmissao);
+        System.out.println("Salário          : R$ " + salario);
+        System.out.println("Tipo Pagamento   : " + tipoPagamento);
+        System.out.println("=========================================================\n");
 
     }
 
@@ -78,7 +70,7 @@ public class Funcionario implements Cadastravel {
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", sexo=" + sexo + '\'' +
-                ", setor=" + setor.getNome() + '\'' +
+                ", setor=" + setor + '\'' +
                 ", cargo='" + cargo + '\'' +
                 ", dataAdmissao=" + dataAdmissao + '\'' +
                 ", salario=" + salario + '\'' +
