@@ -71,45 +71,41 @@ public class Main {
         while (!sair) {
             System.out.println("=========================================================");
             System.out.println("                        📋 MENU                          ");
-            System.out.println("---------------------------------------------------------");
-            System.out.println(" [1] ➕ Cadastrar Setor | ❌ Excluir Setor                ");
+            System.out.println("----------------------------------------------------------");
+            System.out.println(" [1] ➕ Cadastrar Setor                                   ");
             System.out.println(" [2] 📑 Listar Setores                                    ");
-
-            System.out.println(" [4] ➕ Cadastrar Funcionário                             ");
-            System.out.println(" [5] 📑 Listar Funcionários                               ");
-            System.out.println(" [6] ❌ Excluir Funcionário                               ");
-            System.out.println(" [7] ➕ Cadastrar Novo Usuário                             ");
-            System.out.println(" [8] 📑 Listar Usuários                                   ");
-            System.out.println("---------------------------------------------------------");
+            System.out.println(" [3] ➕ Cadastrar Funcionário                             ");
+            System.out.println(" [4] 📑 Listar Funcionários                               ");
+            System.out.println(" [5] ❌ Excluir Funcionário                               ");
+            System.out.println(" [6] ➕ Cadastrar Novo Usuário                            ");
+            System.out.println(" [7] 📑 Listar Usuários                                   ");
+            System.out.println("----------------------------------------------------------");
             System.out.println(" [0] ❌ Sair                                              ");
-            System.out.println("=========================================================");
+            System.out.println("==========================================================");
             System.out.print(" 🔸 Escolha uma opção: ");
 
             String opcao = scanner.nextLine();
 
             switch (opcao) {
                 case "1":
-                    cadastrarSetor();
+                    menuSetor();
                     break;
                 case "2":
                     setorController.listarSetores();
                     break;
                 case "3":
-                    System.out.println();
+                    menuFuncionario();
                     break;
                 case "4":
-                    cadastrarFuncionario();
-                    break;
-                case "5":
                     funcionarioController.listarFuncionarios();
                     break;
-                case "6":
+                case "5":
                     excluirFuncionario();
                     break;
-                case "7":
+                case "6":
                     cadastrarUsuario();
                     break;
-                case "8":
+                case "7":
                     usuarioController.listarUsuarios();
                     break;
                 case "0":
@@ -123,6 +119,54 @@ public class Main {
             }
         }
     }
+
+    private static void menuSetor() {
+        System.out.println("=========================================================");
+        System.out.println("                   🏢 MENU SETOR                         ");
+        System.out.println("---------------------------------------------------------");
+        System.out.println(" [1] ➕ Cadastrar Setor                                   ");
+        System.out.println(" [2] ❌ Excluir Setor                                     ");
+        System.out.println(" [3] 📄 Listar Setores                                    ");
+        System.out.println(" [0] 🔙 Voltar ao menu principal                          ");
+        System.out.println("=========================================================");
+        System.out.print(" 🔸 Escolha uma opção: ");
+
+        String opcao = scanner.nextLine();
+
+        switch (opcao) {
+            case "1":
+                cadastrarSetor();
+                break;
+            case "2":
+                excluirSetor();
+                break;
+            case "3":
+                setorController.listarSetores();
+                break;
+            case "0":
+                menuPrincipal();
+                break;
+            default:
+                System.out.println("\n❌ Opção inválida! Tente novamente.\n");
+        }
+    }
+
+
+    private static void excluirSetor() {
+        System.out.println("=========================================================");
+        System.out.println("                   ❌ EXCLUIR SETOR                      ");
+        System.out.println("---------------------------------------------------------");
+        System.out.print("🔸 Digite o nome do setor que deseja excluir: ");
+        String nomeSetor = scanner.nextLine();
+
+        boolean excluido = setorController.excluirSetor(nomeSetor);
+        if (excluido) {
+            System.out.println("\n✅ Setor excluído com sucesso!\n");
+        } else {
+            System.out.println("\n❌ Setor com nome informado não encontrado.\n");
+        }
+    }
+
 
     private static void cadastrarSetor() {
         System.out.println("===========================================================");
@@ -139,6 +183,38 @@ public class Main {
 
         setorController.cadastrarOuExcluirSetor(nome, descricao);
     }
+
+    private static void menuFuncionario() {
+        System.out.println("=========================================================");
+        System.out.println("                 👨‍💼 MENU FUNCIONÁRIO                     ");
+        System.out.println("---------------------------------------------------------");
+        System.out.println(" [1] ➕ Cadastrar Funcionário                             ");
+        System.out.println(" [2] ❌ Excluir Funcionário                               ");
+        System.out.println(" [3] 📄 Listar Funcionários                               ");
+        System.out.println(" [0] 🔙 Voltar ao menu principal                          ");
+        System.out.println("=========================================================");
+        System.out.print(" 🔸 Escolha uma opção: ");
+
+        String opcao = scanner.nextLine();
+
+        switch (opcao) {
+            case "1":
+                cadastrarFuncionario();
+                break;
+            case "2":
+                excluirFuncionario();
+                break;
+            case "3":
+                funcionarioController.listarFuncionarios();
+                break;
+            case "0":
+                menuPrincipal();
+                break;
+            default:
+                System.out.println("\n❌ Opção inválida! Tente novamente.\n");
+        }
+    }
+
 
     private static void cadastrarFuncionario() {
         System.out.println("=========================================================");

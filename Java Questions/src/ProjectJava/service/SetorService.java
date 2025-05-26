@@ -2,6 +2,7 @@ package ProjectJava.service;
 
 import ProjectJava.model.Setor;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class SetorService {
@@ -24,8 +25,17 @@ public class SetorService {
         return null;
     }
 
-    public boolean excluirSetor(Setor setor) {
-        return setores.remove(setor);
+    public boolean excluirSetor(String nomeSetor) {
+        Iterator<Setor> iterator = setores.iterator();
+        while (iterator.hasNext()) {
+            Setor setor = iterator.next();
+            if (setor.getNome().equalsIgnoreCase(nomeSetor)) {
+                iterator.remove();
+                return true;
+            }
+        }
+        return false;
     }
+
 }
 

@@ -51,5 +51,10 @@ public class SetorController {
             System.out.println("\n✅ Setor cadastrado com sucesso!\n");
         }
     }
+
+    public boolean excluirSetor(String nomeSetor) {
+        return setorService.excluirSetor(nomeSetor);
+    }
+
 }
 
