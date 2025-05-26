@@ -17,15 +17,19 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("======================================================");
-        System.out.println("             🚀  BEM-VINDO AO SISTEMA                 ");
-        System.out.println("                     RH MANAGER                       ");
+        System.out.println("                🚀  BEM-VINDO AO SISTEMA               ");
+        System.out.println("                    💼 RH MANAGER                      ");
         System.out.println("------------------------------------------------------");
-        System.out.println("      Sistema de Gestão de Funcionários e Setores     ");
+        System.out.println("       Sistema de Gestão de Funcionários e Setores     ");
         System.out.println("------------------------------------------------------");
-        System.out.println(" Desenvolvido por: Kayo Brenno Gomes Cunha            ");
-        System.out.println(" Versão: 1.0                                          ");
+        System.out.println("© 2025 - Todos os direitos reservados.                ");
+        System.out.println("Desenvolvido por: Kayo Brenno Gomes Cunha              ");
+        System.out.println("Estudante de Ciência da Computação - UNIESP            ");
+        System.out.println("------------------------------------------------------");
+        System.out.println("Versão: 1.0                                            ");
         System.out.println("======================================================");
         System.out.println();
+
 
         System.out.println("Iniciando Sistema...");
         Thread.sleep(3000);
@@ -109,7 +113,7 @@ public class Main {
             System.out.println(" 👥 [2] Gestão de Funcionários");
             System.out.println(" 🔐 [3] Gestão de Usuários");
             System.out.println("----------------------------------------------------------");
-            System.out.println(" ❌ [0] Sair do Sistema");
+            System.out.println(" ❌ [0] Sair para tela de login");
             System.out.println("==========================================================");
             System.out.print(" 🔸 Escolha uma opção: ");
 
@@ -140,11 +144,11 @@ public class Main {
         System.out.println("==========================================================");
         System.out.println("                 🏢 GESTÃO DE SETORES                     ");
         System.out.println("----------------------------------------------------------");
-        System.out.println(" [1] ➕ Cadastrar Setor");
-        System.out.println(" [2] ❌ Excluir Setor");
-        System.out.println(" [3] 📑 Listar Setores");
+        System.out.println(" ➕ [1] Cadastrar Setor");
+        System.out.println(" ❌ [2] Excluir Setor");
+        System.out.println(" 📑 [3] Listar Setores");
         System.out.println("----------------------------------------------------------");
-        System.out.println(" [0] 🔙 Voltar ao Menu Principal");
+        System.out.println(" 🔙 [0] Voltar ao Menu Principal");
         System.out.println("==========================================================");
         System.out.print(" 🔸 Escolha uma opção: ");
 
@@ -205,11 +209,11 @@ public class Main {
         System.out.println("==========================================================");
         System.out.println("                👥 GESTÃO DE FUNCIONÁRIOS                 ");
         System.out.println("----------------------------------------------------------");
-        System.out.println(" [1] ➕ Cadastrar Funcionário");
-        System.out.println(" [2] ❌ Excluir Funcionário");
-        System.out.println(" [3] 📑 Listar Funcionários");
+        System.out.println(" ➕ [1] Cadastrar Funcionário");
+        System.out.println(" ❌ [2] Excluir Funcionário");
+        System.out.println(" 📑 [3] Listar Funcionários");
         System.out.println("----------------------------------------------------------");
-        System.out.println(" [0] 🔙 Voltar ao Menu Principal");
+        System.out.println(" 🔙 [0] Voltar ao Menu Principal");
         System.out.println("==========================================================");
         System.out.print(" 🔸 Escolha uma opção: ");
 
@@ -339,10 +343,10 @@ public class Main {
         System.out.println("==========================================================");
         System.out.println("                   🔐 GESTÃO DE USUÁRIOS                  ");
         System.out.println("----------------------------------------------------------");
-        System.out.println(" [1] ➕ Cadastrar Usuário");
-        System.out.println(" [2] 📑 Listar Usuários");
+        System.out.println(" ➕ [1] Cadastrar Usuário");
+        System.out.println(" 📑 [2] Listar Usuários");
         System.out.println("----------------------------------------------------------");
-        System.out.println(" [0] 🔙 Voltar ao Menu Principal");
+        System.out.println(" 🔙 [0] Voltar ao Menu Principal");
         System.out.println("==========================================================");
         System.out.print(" 🔸 Escolha uma opção: ");
 
