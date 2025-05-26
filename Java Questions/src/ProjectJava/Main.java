@@ -16,7 +16,6 @@ public class Main {
     private static UsuarioController usuarioController = new UsuarioController();
 
     public static void main(String[] args) throws InterruptedException {
-
         System.out.println("======================================================");
         System.out.println("             🚀  BEM-VINDO AO SISTEMA                 ");
         System.out.println("                     RH MANAGER                       ");
@@ -24,14 +23,48 @@ public class Main {
         System.out.println("      Sistema de Gestão de Funcionários e Setores     ");
         System.out.println("------------------------------------------------------");
         System.out.println(" Desenvolvido por: Kayo Brenno Gomes Cunha            ");
-        System.out.println(" Versão: 1.0                                           ");
+        System.out.println(" Versão: 1.0                                          ");
         System.out.println("======================================================");
         System.out.println();
 
         System.out.println("Iniciando Sistema...");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         System.out.println();
 
+        telaInicial();
+    }
+
+    private static void telaInicial() throws InterruptedException {
+        while (true) {
+            System.out.println("=========================================================");
+            System.out.println("                   🔰  TELA INICIAL                      ");
+            System.out.println("---------------------------------------------------------");
+            System.out.println("                 🔐  [1] Entrar                          ");
+            System.out.println("                 📝  [2] Cadastrar-se                    ");
+            System.out.println("                 ❌  [0] Sair                             ");
+            System.out.println("=========================================================");
+            System.out.print(" 🔸 Escolha uma opção: ");
+
+            String opcao = scanner.nextLine();
+
+            switch (opcao) {
+                case "1":
+                    telaDeLogin();
+                    break;
+                case "2":
+                    cadastrarUsuario();
+                    break;
+                case "0":
+                    System.out.println("\nEncerrando o sistema... 👋");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("\n❌ Opção inválida! Tente novamente.\n");
+            }
+        }
+    }
+
+    private static void telaDeLogin() throws InterruptedException {
         System.out.println("=========================================================");
         System.out.println("                    🔐  TELA DE LOGIN                    ");
         System.out.println("---------------------------------------------------------");
@@ -43,25 +76,25 @@ public class Main {
         int tentativas = 0;
 
         while (!autenticado && tentativas < 3) {
-            System.out.print("Usuário: ");
+            System.out.print("👤 Usuário: ");
             String username = scanner.nextLine();
-            System.out.print("Senha: ");
+            System.out.print("🔑 Senha  : ");
             String senha = scanner.nextLine();
 
             if (usuarioController.login(username, senha)) {
                 autenticado = true;
-                System.out.println("\nLogin bem-sucedido! ✅");
-                System.out.println();
-                Thread.sleep(2000);
+                System.out.println("\n✅ Login bem-sucedido! Acessando sistema...");
+                Thread.sleep(1500);
                 menuPrincipal();
             } else {
-                System.out.println("Usuário ou senha inválidos. ❌");
+                System.out.println("\n❌ Usuário ou senha inválidos.\n");
                 tentativas++;
             }
         }
 
         if (!autenticado) {
-            System.out.println("Número de tentativas excedido. Encerrando sistema...");
+            System.out.println("\n⚠️  Número de tentativas excedido. Retornando à tela inicial.\n");
+            Thread.sleep(1500);
         }
     }
 
@@ -70,14 +103,13 @@ public class Main {
 
         while (!sair) {
             System.out.println("==========================================================");
-            System.out.println("                        📋 MENU                           ");
+            System.out.println("                        📋 MENU PRINCIPAL                 ");
             System.out.println("----------------------------------------------------------");
-            System.out.println(" [1] ➕ Cadastro de Setores                               ");
-            System.out.println(" [2] ➕ Cadastro de Funcionários                          ");
-            System.out.println(" [3] ➕ Cadastrar Novo Usuário                            ");
-            System.out.println(" [7] 📑 Listar Usuários                                   ");
+            System.out.println(" 🏢 [1] Gestão de Setores");
+            System.out.println(" 👥 [2] Gestão de Funcionários");
+            System.out.println(" 🔐 [3] Gestão de Usuários");
             System.out.println("----------------------------------------------------------");
-            System.out.println(" [0] ❌ Sair                                              ");
+            System.out.println(" ❌ [0] Sair do Sistema");
             System.out.println("==========================================================");
             System.out.print(" 🔸 Escolha uma opção: ");
 
@@ -91,10 +123,7 @@ public class Main {
                     menuFuncionario();
                     break;
                 case "3":
-                    cadastrarUsuario();
-                    break;
-                case "4":
-                    usuarioController.listarUsuarios();
+                    menuUsuarios();
                     break;
                 case "0":
                     sair = true;
@@ -108,14 +137,15 @@ public class Main {
     }
 
     private static void menuSetor() {
-        System.out.println("=========================================================");
-        System.out.println("                   🏢 MENU SETOR                         ");
-        System.out.println("---------------------------------------------------------");
-        System.out.println(" [1] ➕ Cadastrar Setor                                   ");
-        System.out.println(" [2] ❌ Excluir Setor                                     ");
-        System.out.println(" [3] 📄 Listar Setores                                    ");
-        System.out.println(" [0] 🔙 Voltar ao menu principal                          ");
-        System.out.println("=========================================================");
+        System.out.println("==========================================================");
+        System.out.println("                 🏢 GESTÃO DE SETORES                     ");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(" [1] ➕ Cadastrar Setor");
+        System.out.println(" [2] ❌ Excluir Setor");
+        System.out.println(" [3] 📑 Listar Setores");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(" [0] 🔙 Voltar ao Menu Principal");
+        System.out.println("==========================================================");
         System.out.print(" 🔸 Escolha uma opção: ");
 
         String opcao = scanner.nextLine();
@@ -172,14 +202,15 @@ public class Main {
     }
 
     private static void menuFuncionario() {
-        System.out.println("=========================================================");
-        System.out.println("                 👨‍💼 MENU FUNCIONÁRIO                     ");
-        System.out.println("---------------------------------------------------------");
-        System.out.println(" [1] ➕ Cadastrar Funcionário                             ");
-        System.out.println(" [2] ❌ Excluir Funcionário                               ");
-        System.out.println(" [3] 📄 Listar Funcionários                               ");
-        System.out.println(" [0] 🔙 Voltar ao menu principal                          ");
-        System.out.println("=========================================================");
+        System.out.println("==========================================================");
+        System.out.println("                👥 GESTÃO DE FUNCIONÁRIOS                 ");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(" [1] ➕ Cadastrar Funcionário");
+        System.out.println(" [2] ❌ Excluir Funcionário");
+        System.out.println(" [3] 📑 Listar Funcionários");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(" [0] 🔙 Voltar ao Menu Principal");
+        System.out.println("==========================================================");
         System.out.print(" 🔸 Escolha uma opção: ");
 
         String opcao = scanner.nextLine();
@@ -288,17 +319,47 @@ public class Main {
 
     private static void cadastrarUsuario() {
         System.out.println("=========================================================");
-        System.out.println("                 👤 CADASTRO DE USUÁRIO                   ");
+        System.out.println("                 📝 CADASTRO DE USUÁRIO                  ");
         System.out.println("---------------------------------------------------------");
-        System.out.println("    Preencha as informações para cadastrar um usuário.   ");
+        System.out.println("  Crie seu nome de usuário e senha para acessar o sistema");
         System.out.println("=========================================================");
         System.out.println();
 
-        System.out.print("🔸 Digite o nome do usuário: ");
+        System.out.print("👤 Nome de usuário: ");
         String username = scanner.nextLine();
-        System.out.print("🔸 Digite a senha: ");
+
+        System.out.print("🔑 Senha: ");
         String senha = scanner.nextLine();
 
         usuarioController.cadastrarUsuario(username, senha);
+        System.out.println("\n✅ Usuário cadastrado com sucesso!\n");
+    }
+
+    private static void menuUsuarios() {
+        System.out.println("==========================================================");
+        System.out.println("                   🔐 GESTÃO DE USUÁRIOS                  ");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(" [1] ➕ Cadastrar Usuário");
+        System.out.println(" [2] 📑 Listar Usuários");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(" [0] 🔙 Voltar ao Menu Principal");
+        System.out.println("==========================================================");
+        System.out.print(" 🔸 Escolha uma opção: ");
+
+        String opcao = scanner.nextLine();
+
+        switch (opcao) {
+            case "1":
+                cadastrarUsuario();
+                break;
+            case "2":
+                usuarioController.listarUsuarios();
+                break;
+            case "0":
+                menuPrincipal();
+                break;
+            default:
+                System.out.println("\n❌ Opção inválida! Tente novamente.\n");
+        }
     }
 }
