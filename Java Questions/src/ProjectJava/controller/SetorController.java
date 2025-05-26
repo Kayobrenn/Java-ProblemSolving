@@ -40,7 +40,7 @@ public class SetorController {
             String resposta = scanner.nextLine();
 
             if (resposta.equalsIgnoreCase("Sim") || resposta.equalsIgnoreCase("SIM")) {
-                setorService.excluirSetor(existente);
+                setorService.excluirSetor(nome);
                 System.out.println("\n✅ Setor excluído com sucesso!\n");
             } else {
                 System.out.println("\nOperação cancelada. Nenhuma alteração feita.\n");
