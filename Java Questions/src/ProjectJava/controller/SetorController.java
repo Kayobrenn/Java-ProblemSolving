@@ -41,9 +41,9 @@ public class SetorController {
 
             if (resposta.equalsIgnoreCase("Sim") || resposta.equalsIgnoreCase("SIM")) {
                 setorService.excluirSetor(existente);
-                System.out.println("✅ Setor excluído com sucesso!\n");
+                System.out.println("\n✅ Setor excluído com sucesso!\n");
             } else {
-                System.out.println("Operação cancelada. Nenhuma alteração feita.\n");
+                System.out.println("\nOperação cancelada. Nenhuma alteração feita.\n");
             }
         } else {
             Setor setor = new Setor(nome, descricao);

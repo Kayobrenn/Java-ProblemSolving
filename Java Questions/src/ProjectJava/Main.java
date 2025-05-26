@@ -50,7 +50,7 @@ public class Main {
 
             if (usuarioController.login(username, senha)) {
                 autenticado = true;
-                System.out.println("Login bem-sucedido! ✅");
+                System.out.println("\nLogin bem-sucedido! ✅");
                 System.out.println();
                 Thread.sleep(2000);
                 menuPrincipal();
@@ -61,7 +61,7 @@ public class Main {
         }
 
         if (!autenticado) {
-            System.out.println("Número de tentativas excedido. Encerrando sistema.");
+            System.out.println("Número de tentativas excedido. Encerrando sistema...");
         }
     }
 
@@ -72,7 +72,7 @@ public class Main {
             System.out.println("=========================================================");
             System.out.println("                        📋 MENU                          ");
             System.out.println("---------------------------------------------------------");
-            System.out.println(" [1] ➕ Cadastrar Setor | ❌ Excluir Setor                                   ");
+            System.out.println(" [1] ➕ Cadastrar Setor | ❌ Excluir Setor                ");
             System.out.println(" [2] 📑 Listar Setores                                    ");
             System.out.println(" [3] ➕ Cadastrar Funcionário                             ");
             System.out.println(" [4] 📑 Listar Funcionários                               ");
@@ -119,7 +119,7 @@ public class Main {
 
     private static void cadastrarSetor() {
         System.out.println("===========================================================");
-        System.out.println("                 🏢 CADASTRO DE SETOR                      ");
+        System.out.println("                🏢 CADASTRO DE SETOR                       ");
         System.out.println("-----------------------------------------------------------");
         System.out.println("Preencha as informações para cadastrar ou excluir um setor.");
         System.out.println("===========================================================");
