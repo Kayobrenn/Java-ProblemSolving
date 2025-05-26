@@ -9,8 +9,7 @@ public class UsuarioService {
     private List<Usuario> usuarios = new ArrayList<>();
 
     public UsuarioService() {
-        // Usuário padrão do sistema
-        usuarios.add(new Usuario("Kayo", "123"));
+        usuarios.add(new Usuario("admin", "123"));
     }
 
     public void cadastrarUsuario(Usuario usuario) {

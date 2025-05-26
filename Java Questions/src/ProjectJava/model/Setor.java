@@ -15,10 +15,6 @@ public class Setor implements Cadastravel {
         return nome;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
     @Override
     public void exibirDados() {
         System.out.println("Setor: " + nome + " | Descrição: " + descricao);

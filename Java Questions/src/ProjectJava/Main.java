@@ -15,7 +15,7 @@ public class Main {
     private static FuncionarioController funcionarioController = new FuncionarioController();
     private static UsuarioController usuarioController = new UsuarioController();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.out.println("======================================================");
         System.out.println("             🚀  BEM-VINDO AO SISTEMA                 ");
@@ -28,8 +28,16 @@ public class Main {
         System.out.println("======================================================");
         System.out.println();
 
+        System.out.println("Iniciando Sistema...");
+        Thread.sleep(5000); // Espera 2 segundos
+        System.out.println();
 
-        System.out.println("===== LOGIN =====");
+        System.out.println("=========================================================");
+        System.out.println("                    🔐  TELA DE LOGIN                    ");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("    Informe seu usuário e senha para acessar o sistema.  ");
+        System.out.println("=========================================================");
+        System.out.println();
 
         boolean autenticado = false;
         int tentativas = 0;
@@ -43,6 +51,7 @@ public class Main {
             if (usuarioController.login(username, senha)) {
                 autenticado = true;
                 System.out.println("Login bem-sucedido! ✅");
+                System.out.println();
                 menuPrincipal();
             } else {
                 System.out.println("Usuário ou senha inválidos. ❌");
@@ -59,15 +68,19 @@ public class Main {
         boolean sair = false;
 
         while (!sair) {
-            System.out.println("\n--- MENU ---");
-            System.out.println("1 - Cadastrar Setor");
-            System.out.println("2 - Listar Setores");
-            System.out.println("3 - Cadastrar Funcionário");
-            System.out.println("4 - Listar Funcionários");
-            System.out.println("5 - Cadastrar Novo Usuário");
-            System.out.println("6 - Listar Usuários");
-            System.out.println("0 - Sair");
-            System.out.print("Escolha a opção: ");
+            System.out.println("=========================================================");
+            System.out.println("                        📋 MENU                          ");
+            System.out.println("---------------------------------------------------------");
+            System.out.println(" [1] ➕ Cadastrar Setor                                   ");
+            System.out.println(" [2] 📑 Listar Setores                                    ");
+            System.out.println(" [3] ➕ Cadastrar Funcionário                             ");
+            System.out.println(" [4] 📑 Listar Funcionários                               ");
+            System.out.println(" [5] ➕ Cadastrar Novo Usuário                             ");
+            System.out.println(" [6] 📑 Listar Usuários                                   ");
+            System.out.println("---------------------------------------------------------");
+            System.out.println(" [0] ❌ Sair                                              ");
+            System.out.println("=========================================================");
+            System.out.print(" 🔸 Escolha uma opção: ");
 
             String opcao = scanner.nextLine();
 
@@ -92,7 +105,9 @@ public class Main {
                     break;
                 case "0":
                     sair = true;
-                    System.out.println("Encerrando aplicação.");
+                    System.out.println("\nSaindo do sistema... Obrigado por utilizar o RH Manager!");
+                    System.out.println("Até a próxima! 👋\n");
+
                     break;
                 default:
                     System.out.println("Opção inválida, tente novamente.");
@@ -101,9 +116,15 @@ public class Main {
     }
 
     private static void cadastrarSetor() {
-        System.out.print("Digite o nome do setor: ");
+        System.out.println("=========================================================");
+        System.out.println("                🏢 CADASTRO DE SETOR                     ");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("   Preencha as informações para cadastrar um novo setor. ");
+        System.out.println("=========================================================");
+        System.out.println();
+        System.out.print("🔸 Digite o nome do setor: ");
         String nome = scanner.nextLine();
-        System.out.print("Digite a descrição do setor: ");
+        System.out.print("🔸 Digite a descrição do setor: ");
         String descricao = scanner.nextLine();
 
         setorController.cadastrarSetor(nome, descricao);
