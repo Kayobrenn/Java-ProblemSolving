@@ -14,14 +14,14 @@ public class Funcionario implements Cadastravel {
     private Setor setor;
     private String cargo;
     private String dataAdmissao;
-    private double salario;
+    private String salario;
     private String tipoPagamento;
     private String estadoCivil;
 
     public Funcionario(String nome, String cpf, String rg, int idade, String dataNascimento,
                        String email, String telefone, Sexo sexo,
                        Setor setor, String cargo, String dataAdmissao,
-                       double salario, String tipoPagamento,  String estadoCivil) {
+                       String salario, String tipoPagamento,  String estadoCivil) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;

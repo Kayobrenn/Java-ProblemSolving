@@ -12,7 +12,7 @@ public class FuncionarioController {
     public void cadastrarFuncionario(String nome, String cpf, String rg, int idade, String dataNascimento,
                                      String email, String telefone, Sexo sexo,
                                      Setor setor, String cargo, String dataAdmissao,
-                                     double salario, String tipoPagamento, String estadoCivil) {
+                                     String salario, String tipoPagamento, String estadoCivil) {
         if (setor == null) {
             System.out.println("Setor inválido. Cadastro não realizado.");
             return;

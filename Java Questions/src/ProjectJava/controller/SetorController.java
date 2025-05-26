@@ -11,7 +11,7 @@ public class SetorController {
     public void cadastrarSetor(String nome, String descricao) {
         Setor setor = new Setor(nome, descricao);
         setorService.cadastrarSetor(setor);
-        System.out.println("Setor cadastrado com sucesso!");
+        System.out.println("\n✅ Setor cadastrado com sucesso!\n");
     }
 
     public void listarSetores() {

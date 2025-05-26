@@ -29,7 +29,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Iniciando Sistema...");
-        Thread.sleep(5000); // Espera 2 segundos
+        Thread.sleep(5000);
         System.out.println();
 
         System.out.println("=========================================================");
@@ -52,6 +52,7 @@ public class Main {
                 autenticado = true;
                 System.out.println("Login bem-sucedido! ✅");
                 System.out.println();
+                Thread.sleep(2000);
                 menuPrincipal();
             } else {
                 System.out.println("Usuário ou senha inválidos. ❌");
@@ -81,6 +82,7 @@ public class Main {
             System.out.println(" [0] ❌ Sair                                              ");
             System.out.println("=========================================================");
             System.out.print(" 🔸 Escolha uma opção: ");
+            System.out.println();
 
             String opcao = scanner.nextLine();
 
@@ -169,7 +171,7 @@ public class Main {
         String dataAdmissao = scanner.nextLine();
 
         System.out.print("🔸 Digite o salário: ");
-        double salario = Double.parseDouble(scanner.nextLine());
+        String salario = scanner.nextLine();
 
         System.out.print("🔸 Tipo de pagamento (Mensal ou Quinzenal): ");
         String tipoPagamento = scanner.nextLine();
