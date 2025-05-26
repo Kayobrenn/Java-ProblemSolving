@@ -69,15 +69,12 @@ public class Main {
         boolean sair = false;
 
         while (!sair) {
-            System.out.println("=========================================================");
-            System.out.println("                        📋 MENU                          ");
+            System.out.println("==========================================================");
+            System.out.println("                        📋 MENU                           ");
             System.out.println("----------------------------------------------------------");
-            System.out.println(" [1] ➕ Cadastrar Setor                                   ");
-            System.out.println(" [2] 📑 Listar Setores                                    ");
-            System.out.println(" [3] ➕ Cadastrar Funcionário                             ");
-            System.out.println(" [4] 📑 Listar Funcionários                               ");
-            System.out.println(" [5] ❌ Excluir Funcionário                               ");
-            System.out.println(" [6] ➕ Cadastrar Novo Usuário                            ");
+            System.out.println(" [1] ➕ Cadastro de Setores                               ");
+            System.out.println(" [2] ➕ Cadastro de Funcionários                          ");
+            System.out.println(" [3] ➕ Cadastrar Novo Usuário                            ");
             System.out.println(" [7] 📑 Listar Usuários                                   ");
             System.out.println("----------------------------------------------------------");
             System.out.println(" [0] ❌ Sair                                              ");
@@ -91,28 +88,18 @@ public class Main {
                     menuSetor();
                     break;
                 case "2":
-                    setorController.listarSetores();
-                    break;
-                case "3":
                     menuFuncionario();
                     break;
-                case "4":
-                    funcionarioController.listarFuncionarios();
-                    break;
-                case "5":
-                    excluirFuncionario();
-                    break;
-                case "6":
+                case "3":
                     cadastrarUsuario();
                     break;
-                case "7":
+                case "4":
                     usuarioController.listarUsuarios();
                     break;
                 case "0":
                     sair = true;
                     System.out.println("\nSaindo do sistema... Obrigado por utilizar o RH Manager!");
                     System.out.println("Até a próxima! 👋\n");
-
                     break;
                 default:
                     System.out.println("\n❌ Opção inválida! Tente novamente.\n");
@@ -292,9 +279,9 @@ public class Main {
 
         boolean sucesso = funcionarioController.excluirFuncionario(cpf);
         if (sucesso) {
-            System.out.println("Funcionário excluído com sucesso!");
+            System.out.println("\n✅ Funcionário excluído com sucesso!\n");
         } else {
-            System.out.println("Funcionário não encontrado.");
+            System.out.println("\n❌ Funcionário não encontrado.\n");
         }
     }
 
