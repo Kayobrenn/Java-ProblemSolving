@@ -34,5 +34,10 @@ public class FuncionarioController {
             }
         }
     }
+
+    public boolean excluirFuncionario(String cpf) {
+        return funcionarioService.excluirFuncionario(cpf);
+    }
+
 }
 

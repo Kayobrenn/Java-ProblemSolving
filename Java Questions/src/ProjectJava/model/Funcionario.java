@@ -78,4 +78,8 @@ public class Funcionario implements Cadastravel {
                 ", estadoCivil='" + estadoCivil + '\'' +
                 '}';
     }
+
+    public String getCpf() {
+        return cpf;
+    }
 }

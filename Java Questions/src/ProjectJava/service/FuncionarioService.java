@@ -2,6 +2,7 @@ package ProjectJava.service;
 
 import ProjectJava.model.Funcionario;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class FuncionarioService {
@@ -14,5 +15,18 @@ public class FuncionarioService {
     public List<Funcionario> listarFuncionarios() {
         return funcionarios;
     }
+
+    public boolean excluirFuncionario(String cpf) {
+        Iterator<Funcionario> iterator = funcionarios.iterator();
+        while (iterator.hasNext()) {
+            Funcionario f = iterator.next();
+            if (f.getCpf().equalsIgnoreCase(cpf)) {
+                iterator.remove();
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 

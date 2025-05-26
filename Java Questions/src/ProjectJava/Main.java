@@ -74,15 +74,16 @@ public class Main {
             System.out.println("---------------------------------------------------------");
             System.out.println(" [1] ➕ Cadastrar Setor | ❌ Excluir Setor                ");
             System.out.println(" [2] 📑 Listar Setores                                    ");
-            System.out.println(" [3] ➕ Cadastrar Funcionário                             ");
-            System.out.println(" [4] 📑 Listar Funcionários                               ");
-            System.out.println(" [5] ➕ Cadastrar Novo Usuário                             ");
-            System.out.println(" [6] 📑 Listar Usuários                                   ");
+
+            System.out.println(" [4] ➕ Cadastrar Funcionário                             ");
+            System.out.println(" [5] 📑 Listar Funcionários                               ");
+            System.out.println(" [6] ❌ Excluir Funcionário                               ");
+            System.out.println(" [7] ➕ Cadastrar Novo Usuário                             ");
+            System.out.println(" [8] 📑 Listar Usuários                                   ");
             System.out.println("---------------------------------------------------------");
             System.out.println(" [0] ❌ Sair                                              ");
             System.out.println("=========================================================");
             System.out.print(" 🔸 Escolha uma opção: ");
-            System.out.println();
 
             String opcao = scanner.nextLine();
 
@@ -94,15 +95,21 @@ public class Main {
                     setorController.listarSetores();
                     break;
                 case "3":
-                    cadastrarFuncionario();
+                    System.out.println();
                     break;
                 case "4":
-                    funcionarioController.listarFuncionarios();
+                    cadastrarFuncionario();
                     break;
                 case "5":
-                    cadastrarUsuario();
+                    funcionarioController.listarFuncionarios();
                     break;
                 case "6":
+                    excluirFuncionario();
+                    break;
+                case "7":
+                    cadastrarUsuario();
+                    break;
+                case "8":
                     usuarioController.listarUsuarios();
                     break;
                 case "0":
@@ -199,6 +206,22 @@ public class Main {
         funcionarioController.cadastrarFuncionario(nome, cpf, rg, idade, dataNascimento, email, telefone, sexo,
                                                     setor, cargo, dataAdmissao, salario, tipoPagamento, estadoCivil);
     }
+
+    private static void excluirFuncionario() {
+        System.out.println("=========================================================");
+        System.out.println("              ❌ EXCLUIR FUNCIONÁRIO                     ");
+        System.out.println("---------------------------------------------------------");
+        System.out.print("🔸 Digite o CPF do funcionário que deseja excluir: ");
+        String cpf = scanner.nextLine();
+
+        boolean sucesso = funcionarioController.excluirFuncionario(cpf);
+        if (sucesso) {
+            System.out.println("Funcionário excluído com sucesso!");
+        } else {
+            System.out.println("Funcionário não encontrado.");
+        }
+    }
+
 
     private static void cadastrarUsuario() {
         System.out.println("=========================================================");
