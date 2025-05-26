@@ -21,7 +21,7 @@ public class FuncionarioController {
         Funcionario funcionario = new Funcionario(nome, cpf, rg, idade, dataNascimento, email, telefone, sexo, setor,
                                                     cargo, dataAdmissao, salario, tipoPagamento, estadoCivil);
         funcionarioService.cadastrarFuncionario(funcionario);
-        System.out.println("Funcionário cadastrado com sucesso!");
+        System.out.println("\n✅ Funcionário cadastrado com sucesso!\n");
     }
 
     public void listarFuncionarios() {

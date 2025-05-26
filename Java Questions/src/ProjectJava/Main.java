@@ -110,7 +110,7 @@ public class Main {
 
                     break;
                 default:
-                    System.out.println("Opção inválida, tente novamente.");
+                    System.out.println("\n❌ Opção inválida! Tente novamente.\n");
             }
         }
     }
@@ -131,19 +131,26 @@ public class Main {
     }
 
     private static void cadastrarFuncionario() {
-        System.out.print("Digite o nome do funcionário: ");
+        System.out.println("=========================================================");
+        System.out.println("              👨‍💼 CADASTRO DE FUNCIONÁRIO                 ");
+        System.out.println("---------------------------------------------------------");
+        System.out.println("  Preencha as informações para cadastrar um funcionário. ");
+        System.out.println("=========================================================");
+        System.out.println();
+
+        System.out.print("🔸 Digite o nome do funcionário: ");
         String nome = scanner.nextLine();
 
-        System.out.print("Digite o CPF: ");
+        System.out.print("🔸 Digite o CPF: ");
         String cpf = scanner.nextLine();
 
-        System.out.print("Digite o RG: ");
+        System.out.print("🔸 Digite o RG: ");
         String rg = scanner.nextLine();
 
-        System.out.print("Digite a data de nascimento: ");
+        System.out.print("🔸 Digite a data de nascimento: ");
         String dataNascimento = scanner.nextLine();
 
-        System.out.print("Digite a idade: ");
+        System.out.print("🔸 Digite a idade: ");
         int idade;
         try {
             idade = Integer.parseInt(scanner.nextLine());
@@ -152,28 +159,28 @@ public class Main {
             return;
         }
 
-        System.out.print("Digite o Estado Civil: ");
+        System.out.print("🔸 Digite o Estado Cívil: ");
         String estadoCivil = scanner.nextLine();
 
-        System.out.print("Digite o Cargo: ");
+        System.out.print("🔸 Digite o Cargo: ");
         String cargo = scanner.nextLine();
 
-        System.out.print("Digite o Data de Admissão: ");
+        System.out.print("🔸 Digite a data de admissão (dd/MM/yyyy): ");
         String dataAdmissao = scanner.nextLine();
 
-        System.out.print("Digite o Salario:");
+        System.out.print("🔸 Digite o salário: ");
         double salario = Double.parseDouble(scanner.nextLine());
 
-        System.out.print("Digite o Tipo de Pagamento: ");
+        System.out.print("🔸 Tipo de pagamento (Mensal ou Quinzenal): ");
         String tipoPagamento = scanner.nextLine();
 
-        System.out.print("Digite o e-mail: ");
+        System.out.print("🔸 Digite o email: ");
         String email = scanner.nextLine();
 
-        System.out.print("Digite o telefone: ");
+        System.out.print("🔸 Digite o telefone: ");
         String telefone = scanner.nextLine();
 
-        System.out.print("Digite o sexo (MASCULINO, FEMININO, OUTRO): ");
+        System.out.print("🔸 Digite o sexo: (Masculino, Feminino ou Outros): ");
         Sexo sexo;
         try {
             sexo = Sexo.valueOf(scanner.nextLine().toUpperCase());
@@ -182,7 +189,7 @@ public class Main {
             return;
         }
 
-        System.out.print("Digite o nome do setor do funcionário: ");
+        System.out.print("🔸 Informe o nome do setor que ele pertence: ");
         String nomeSetor = scanner.nextLine();
         Setor setor = setorController.buscarSetorPorNome(nomeSetor);
 
